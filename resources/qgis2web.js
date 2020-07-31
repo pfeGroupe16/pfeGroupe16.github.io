@@ -88,15 +88,20 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-        extent: [535269.421011, 408170.697618, 642934.051452, 468931.924698], maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
+         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
             code: 'EPSG:32632',
             extent: [9.335801, 3.744481, 614651.438500, 462946.427000],
             units: 'm'})
     })
 });
 
+var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
+map.addControl(layerSwitcher);
+layerSwitcher.hidePanel = function() {};
+layerSwitcher.showPanel();
 
-map.getView().fit([535269.421011, 408170.697618, 642934.051452, 468931.924698], map.getSize());
+
+map.getView().fit([558241.428793, 427038.657606, 612073.744014, 457419.271146], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
