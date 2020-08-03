@@ -7,8 +7,19 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" type="text/css" href="resources/horsey.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/ol3-search-layer.min.css">
         <link rel="stylesheet" href="./resources/ol3-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
+        <style>
+        .ol-geocoder.gcd-gl-container {
+            top: 170px!important;
+        }
+        .ol-geocoder .gcd-gl-btn {
+            width: 21px!important;
+            height: 21px!important;
+        }
+        </style>
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <style>
         html, body {
@@ -18,13 +29,14 @@
 
         <style>
         .geolocate {
-            top: 65px;
+            top: 100px;
             left: .5em;
         }
         .ol-touch .geolocate {
-            top: 80px;
+            top: 130px;
         }
         </style>
+    <link href="http://cdn.jsdelivr.net/openlayers.geocoder/latest/ol3-geocoder.min.css" rel="stylesheet">
 <style>
 .tooltip {
   position: relative;
@@ -59,11 +71,11 @@
   border-top-color: #ffcc33;
 }
 .measure-control {
-  top: 100px;
+  top: 135px;
   left: .5em;
 }
 .ol-touch .measure-control {
-  top: 130px;
+  top: 180px;
 }
 </style>
         <style>
@@ -87,7 +99,11 @@
         <script src="resources/polyfills.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
+        <script src="http://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList,URL"></script>
+        <script src="resources/horsey.min.js"></script>
+        <script src="resources/ol3-search-layer.min.js"></script>
         <script src="./resources/ol3-layerswitcher.js"></script>
+    <script src="http://cdn.jsdelivr.net/openlayers.geocoder/latest/ol3-geocoder.js"></script>
         <script src="layers/routes_0.js"></script><script src="layers/edicifes_1.js"></script><script src="layers/bornes_geodesiques_2.js"></script><script src="layers/communes_3.js"></script><script src="layers/cours_eaux_4.js"></script>
         <script src="styles/routes_0_style.js"></script><script src="styles/edicifes_1_style.js"></script><script src="styles/bornes_geodesiques_2_style.js"></script><script src="styles/communes_3_style.js"></script><script src="styles/cours_eaux_4_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 

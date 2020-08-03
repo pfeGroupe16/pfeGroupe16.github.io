@@ -95,7 +95,16 @@ var map = new ol.Map({
 var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
 map.addControl(layerSwitcher);
 
-map.getView().fit([1033302.145993, 414236.226535, 1141317.215298, 475468.470810], map.getSize());
+    var searchLayer = new ol.SearchLayer({
+      layer: lyr_bornes_geodesiques_2,
+      colName: 'type_borne',
+      zoom: 10,
+      collapsed: true,
+      map: map
+    });
+
+    map.addControl(searchLayer);
+map.getView().fit([1061399.941859, 433823.241614, 1114134.562608, 464441.946991], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -661,6 +670,14 @@ var geolocateOverlay = new ol.layer.Vector({
 geolocation.setTracking(true);
 
 
+var geocoder = new Geocoder('nominatim', {
+  provider: 'osm',
+  lang: 'en-US',
+  placeholder: 'Search for ...',
+  limit: 5,
+  keepOpen: true
+});
+map.addControl(geocoder);
 
 var attribution = document.getElementsByClassName('ol-attribution')[0];
 var attributionList = attribution.getElementsByTagName('ul')[0];
