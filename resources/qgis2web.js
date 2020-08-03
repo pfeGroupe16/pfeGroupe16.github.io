@@ -88,20 +88,14 @@ var map = new ol.Map({
     overlays: [overlayPopup],
     layers: layersList,
     view: new ol.View({
-         maxZoom: 28, minZoom: 1, projection: new ol.proj.Projection({
-            code: 'EPSG:32632',
-            extent: [9.335801, 3.744481, 614651.438500, 462946.427000],
-            units: 'm'})
+         maxZoom: 28, minZoom: 1
     })
 });
 
 var layerSwitcher = new ol.control.LayerSwitcher({tipLabel: "Layers"});
 map.addControl(layerSwitcher);
-layerSwitcher.hidePanel = function() {};
-layerSwitcher.showPanel();
 
-
-map.getView().fit([558241.428793, 427038.657606, 612073.744014, 457419.271146], map.getSize());
+map.getView().fit([1033302.145993, 414236.226535, 1141317.215298, 475468.470810], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
@@ -667,14 +661,6 @@ var geolocateOverlay = new ol.layer.Vector({
 geolocation.setTracking(true);
 
 
-var geocoder = new Geocoder('nominatim', {
-  provider: 'osm',
-  lang: 'en-US',
-  placeholder: 'Search for ...',
-  limit: 5,
-  keepOpen: true
-});
-map.addControl(geocoder);
 
 var attribution = document.getElementsByClassName('ol-attribution')[0];
 var attributionList = attribution.getElementsByTagName('ul')[0];
